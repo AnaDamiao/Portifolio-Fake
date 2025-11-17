@@ -1,0 +1,55 @@
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Studio Criativo — Contato</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/main.js"></script>
+</head>
+<body class="page-contato">
+  <header class="site-header">
+    <div class="brand"><a href="index.html">Studio <span>Criativo</span></a></div>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="portfolio.html">Portfólio</a>
+      <a href="sobre.html">Sobre Mim</a>
+      <a href="processo.html">Processos</a>
+      <a href="contato.html" class="active">Contato</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Abrir menu">☰</button>
+  </header>
+
+  <main class="contact-main">
+    <section class="contact-hero">
+      <h1>Vamos trabalhar juntos?</h1>
+      <p>Preencha o formulário ou me mande uma mensagem nas redes.</p>
+    </section>
+
+    <section class="contact-form-wrap">
+      <form id="contactForm" class="contact-form" novalidate>
+        <label>Nome <input type="text" name="name" required></label>
+        <label>Email <input type="email" name="email" required></label>
+        <label>Assunto <input type="text" name="subject"></label>
+        <label>Mensagem <textarea name="message" rows="5" required></textarea></label>
+        <div class="form-row">
+          <button type="submit" class="btn">Enviar</button>
+          <button type="reset" class="btn ghost">Limpar</button>
+        </div>
+        <p id="formMessage" class="form-message" role="status"></p>
+      </form>
+
+      <aside class="contact-info">
+        <h3>Contato direto</h3>
+        <p>Email: <a style="color: #ff6b6b;" href="mailto:seu@studio.com">seu@studio.com</a></p>
+        <p>Telefone: (21) 99999-8888</p>
+        <h4>Localização</h4>
+        <p>Atendimento remoto e por agenda.</p>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner"><p>© <span id="year5"></span> Studio Criativo</p></div>
+  </footer>
+</body>
+</html>

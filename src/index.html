@@ -1,0 +1,138 @@
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Studio Criativo — Home</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/main.js"></script>
+</head>
+
+<body class="page-home">
+  <header class="site-header">
+    <div class="brand">
+      <a href="index.html">Studio <span>Criativo</span></a>
+    </div>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="portfolio.html">Portfólio</a>
+      <a href="sobre.html">Sobre Mim</a>
+      <a href="processo.html">Processos</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Abrir menu">☰</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <h1>Design que conta histórias<br><span>— Studio Criativo</span></h1>
+          <p>Identidade visual, branding, ilustração e direção de arte para marcas que querem marcar presença.</p>
+          <p class="cta-row"><a class="btn" href="portfolio.html">Ver Portfólio</a> <a class="btn ghost"
+              href="contato.html">Vamos conversar</a></p>
+        </div>
+        <div class="hero-media">
+          <img src="/img/designer.jpg" alt="Peça de design - Studio Criativo">
+        </div>
+      </div>
+    </section>
+
+    <section class="services">
+      <h2>O que eu faço</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Branding</h3>
+          <p>Construção de identidade visual com manual de uso e aplicações para web e impressão.</p>
+        </article>
+        <article class="card">
+          <h3>Ilustração</h3>
+          <p>Ilustrações autorais para embalagens, redes sociais e campanhas.</p>
+        </article>
+        <article class="card">
+          <h3>Design Digital</h3>
+          <p>Posts, banners, anúncios e layouts responsivos para redes e sites.</p>
+        </article>
+      </div>
+    </section>
+
+    <section style="padding: 30px 28px">
+
+      <h2>Mídias</h2>
+    </section>
+
+    <section class="media-showcase">
+      <div class="media-block">
+        <h4>Áudio (autoral)</h4>
+
+        <div class="spotify-player">
+          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/068gNzrbdw79QMAL4mp7xG"
+            width="100%" height="152" frameborder="0"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+          </iframe>
+        </div>
+      </div>
+      <div class="media-block">
+        <h4>Vídeo Time-lapse</h4>
+
+        <div class="yt-player">
+          <iframe src="https://www.youtube.com/embed/ucpYgkqV8dw" title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="portfolio-preview">
+      <h2>Portfólio em destaque</h2>
+      <div class="gallery">
+        <a href="portfolio.html" class="thumb"><img src="/img/portfolio1.jpg" alt="Projeto 1"></a>
+        <a href="portfolio.html" class="thumb"><img src="/img/portfolio2.jpg" alt="Projeto 1"></a>
+        <a href="portfolio.html" class="thumb"><img src="/img/portfolio3.jpg" alt="Projeto 1"></a>
+      </div>
+      
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>© <span id="year"></span> Studio Criativo — Designer Gráfico</p>
+      <nav class="socials">
+        <a href="https://www.instagram.com/damiao_clara/" target="_blank" aria-label="Instagram">IG</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    const audio = document.getElementById("audio");
+    const playBtn = document.getElementById("play-btn");
+    const seekBar = document.getElementById("seek-bar");
+    const timeEl = document.getElementById("time");
+
+    playBtn.addEventListener("click", () => {
+      if (audio.paused) {
+        audio.play();
+        playBtn.textContent = "⏸";
+      } else {
+        audio.pause();
+        playBtn.textContent = "▶";
+      }
+    });
+
+    audio.addEventListener("timeupdate", () => {
+      seekBar.value = (audio.currentTime / audio.duration) * 100 || 0;
+
+      const m = Math.floor(audio.currentTime / 60);
+      const s = Math.floor(audio.currentTime % 60).toString().padStart(2, "0");
+      timeEl.textContent = `${m}:${s}`;
+    });
+
+    seekBar.addEventListener("input", () => {
+      audio.currentTime = (seekBar.value / 100) * audio.duration;
+    });
+
+  </script>
+</body>
+
+</html>

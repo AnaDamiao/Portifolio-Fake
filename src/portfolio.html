@@ -1,0 +1,60 @@
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Studio Criativo — Portfólio</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/main.js"></script>
+</head>
+<body class="page-portfolio">
+  <header class="site-header">
+    <div class="brand"><a href="index.html">Studio <span>Criativo</span></a></div>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="portfolio.html" class="active">Portfólio</a>
+      <a href="sobre.html">Sobre Mim</a>
+      <a href="processo.html">Processos</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Abrir menu">☰</button>
+  </header>
+
+  <main>
+    <section class="portfolio-hero">
+      <h1>Portfólio</h1>
+      <p>Seleção de trabalhos autorais e com clientes.</p>
+    </section>
+
+    <section class="works">
+      <div class="filter-row">
+        <button data-filter="all" class="btn small active">Todos</button>
+        <button data-filter="branding" class="btn small">Branding</button>
+        <button data-filter="ilustracao" class="btn small">Ilustração</button>
+        <button data-filter="digital" class="btn small">Digital</button>
+      </div>
+
+      <div class="grid" id="portfolioGrid">
+        <article class="work" data-cat="branding">
+          <img src="/img/brading.jpg" style="max-width: 700px;" alt="Projeto branding">
+          <div class="work-info"><h3>Marca: Madeli</h3><p>Identidade.</p></div>
+        </article>
+        <article class="work" data-cat="ilustracao">
+          <img src="/img/carnaval.jpg" style="max-width: 593px;" alt="Ilustração">
+          <div class="work-info"><h3>Ilustração: Carnaval</h3><p>Série autoral de posters.</p></div>
+        </article>
+        <article class="work" data-cat="digital">
+          <img src="/img/summer.jpg" style="max-width: 568px;"  alt="Campanha digital">
+          <div class="work-info"><h3>Campanha: Summer</h3><p>Peças para redes sociais.</p></div>
+        </article>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>© <span id="year2"></span> Studio Criativo</p>
+    </div>
+  </footer>
+</body>
+</html>
