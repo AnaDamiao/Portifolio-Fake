@@ -56,5 +56,48 @@
       <p>© <span id="year2"></span> Studio Criativo</p>
     </div>
   </footer>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const buttons = document.querySelectorAll(".filter-row .btn");
+  const items = document.querySelectorAll("#portfolioGrid .work");
+
+  const defaultButton = document.querySelector("[data-filter='all']");
+  if (defaultButton) defaultButton.classList.add("active");
+
+  items.forEach(item => {
+    item.style.display = "block";
+    setTimeout(() => {
+      item.classList.add("fade-in");
+    }, 10);
+  });
+
+  buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        buttons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        const filter = btn.dataset.filter;
+
+        items.forEach(item => {
+          const category = item.dataset.cat;
+
+          item.classList.remove("fade-in");
+
+          if (filter === "all" || filter === category) {
+            item.style.display = "block";
+            setTimeout(() => item.classList.add("fade-in"), 10);
+          } else {
+            item.classList.add("fade-out");
+            setTimeout(() => {
+              item.classList.remove("fade-out");
+              item.style.display = "none";
+            }, 300);
+          }
+        });
+      });
+    });
+  });
+  </script>
 </body>
 </html>

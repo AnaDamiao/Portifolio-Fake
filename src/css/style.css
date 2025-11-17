@@ -425,6 +425,30 @@ img {
   font-size: 14px;
 }
 
+/* Animação de entrada */
+.work {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity .3s ease, transform .3s ease;
+}
+
+.work.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animação de saída */
+.work.fade-out {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+/* Botão ativo */
+.filter-row .btn.active {
+  background: #111;
+  color: #fff;
+  transition: background .3s ease, color .3s ease;
+}
 
 
 @media(max-width:900px) {
